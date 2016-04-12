@@ -22,12 +22,14 @@ int main() {
 
 	cl_command_queue commandQueue = nullptr;
 
-	cl_int size = rowCount * columnCount * sizeof(float);
+	cl_int size = sizeof(float)* rowCount * columnCount;
 	cl_mem sourceBuffer;
 	cl_mem destinationBuffer;
 
 	size_t programLength = 0;
 	cl_program program;
+
+	cl_kernel kernel;
 
 	// clGetPlatformIDs
 	status = clGetPlatformIDs(1, &platformID, &nbPlatforms);
@@ -66,6 +68,8 @@ int main() {
 	checkStatusAndOutputError(status);
 
 	// clCreateKernel
+	kernel = clCreateKernel(program, "OpenCLHeatTransfer", &status);
+	checkStatusAndOutputError(status);
 
 	// clSetKernelArg
 
