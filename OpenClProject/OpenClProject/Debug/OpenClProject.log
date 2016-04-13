@@ -1,11 +1,8 @@
-﻿La génération a démarré 2016-04-13 16:32:49.
+﻿La génération a démarré 2016-04-13 18:44:08.
      1>Projet "C:\Users\AK79880\Documents\Lab4-OpenCL\OpenClProject\OpenClProject\OpenClProject.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Lab4.cpp
          Lab4.cpp
-     1>c:\users\ak79880\documents\lab4-opencl\openclproject\openclproject\lab4.cpp(26): warning C4305: '=' : troncation de 'double' à 'float'
-     1>c:\users\ak79880\documents\lab4-opencl\openclproject\openclproject\lab4.cpp(27): warning C4305: '=' : troncation de 'double' à 'float'
-     1>c:\users\ak79880\documents\lab4-opencl\openclproject\openclproject\lab4.cpp(152): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\AK79880\Documents\Lab4-OpenCL\OpenClProject\Debug\OpenClProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5/lib/Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib OpenCL.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\AK79880\Documents\Lab4-OpenCL\OpenClProject\Debug\OpenClProject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\AK79880\Documents\Lab4-OpenCL\OpenClProject\Debug\OpenClProject.lib" /MACHINE:X86 Debug\Lab4.obj
          OpenClProject.vcxproj -> C:\Users\AK79880\Documents\Lab4-OpenCL\OpenClProject\Debug\OpenClProject.exe

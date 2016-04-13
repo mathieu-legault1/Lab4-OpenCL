@@ -12,5 +12,5 @@ __kernel void OpenCLHeatTransfer(__global float* previousMatrix, __global float*
 
 	int correctID = line * columnCount + column;
 
-	currentMatrix[correctID] = (1 - 4 * td / (h*h)) * previousMatrix[correctID] + (td / (h*h)) * (previousMatrix[correctID - rowCount] + previousMatrix[correctID + rowCount] + previousMatrix[correctID - 1] + previousMatrix[correctID + 1]);
+	currentMatrix[correctID] = (1 - 4 * td / (h*h)) * previousMatrix[correctID] + (td / (h*h)) * (previousMatrix[correctID - columnCount] + previousMatrix[correctID + columnCount] + previousMatrix[correctID - 1] + previousMatrix[correctID + 1]);
 }
