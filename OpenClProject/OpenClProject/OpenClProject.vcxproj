@@ -84,7 +84,7 @@
     <ClCompile Include="Lab4.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Lab4.cl" />
+    <None Include="Lab4.cl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
