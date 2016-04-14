@@ -115,13 +115,16 @@ double parSolve() {
 	float* currentMatrix = getInitialMatrix();
 	size_t sizeT_size = rowCount * columnCount; // nice name ...
 
+	// we only need to initialize de currentMatrix once 
+	status = clEnqueueWriteBuffer(commandQueue, bufferCurrentMatrix, CL_FALSE, 0, size, currentMatrix, 0, NULL, NULL);
+	checkStatusAndOutputError(status);
+
+
 	for (int i = 0; i < np; i++) {
 		// // clEnqueueWriteBuffer
 		status = clEnqueueWriteBuffer(commandQueue, bufferPreviousMatrix, CL_FALSE, 0, size, previousMatrix, 0, NULL, NULL);
 		checkStatusAndOutputError(status);
-		status = clEnqueueWriteBuffer(commandQueue, bufferCurrentMatrix, CL_FALSE, 0, size, currentMatrix, 0, NULL, NULL);
-		checkStatusAndOutputError(status);
-
+		
 		// clEnqueueNDRangeKerne
 		status = clEnqueueNDRangeKernel(commandQueue, kernel, 1, NULL, &sizeT_size, NULL, 0, NULL, NULL);
 		checkStatusAndOutputError(status);
@@ -130,6 +133,7 @@ double parSolve() {
 		status = clEnqueueReadBuffer(commandQueue, bufferCurrentMatrix, CL_TRUE, 0, size, previousMatrix, 0, NULL, NULL);
 		checkStatusAndOutputError(status);
 	}
+
 	double duration = clock() - start;
 	std::cout << "Matrice Finale(parallele)" << std::endl;
 	outputMatrix(previousMatrix);
